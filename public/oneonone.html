@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One-On-One</title>
+    <link rel="stylesheet" href="/styles/general.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <h1>
+            <span class="one1">ONE</span><span class="on">ON</span
+            ><span class="one2">ONE</span>
+          </h1>
+        </div>
+        <nav>
+          <input type="checkbox" id="hamburger" />
+          <ul class="hamburger-menu">
+            <label for="hamburger" class="close-menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </label>
+
+            <li>
+              <a href="#">HOME</a>
+            </li>
+            <li>
+              <a href="service.html">SERVICE</a>
+            </li>
+            <li>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="">PROFILE</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">HOME</a>
+            </li>
+            <li>
+              <a href="service.html">SERVICE</a>
+            </li>
+            <li>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="">PROFILE</a>
+            </li>
+            <label for="hamburger" class="open-menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#0bc40b"
+              >
+                <path
+                  d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                />
+              </svg>
+            </label>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section>
+      <h1 id="theTopic">Discussing</h1>
+
+      <div class="main-section">
+        <div class="call-section">
+          <div class="caller-section">
+            <input type="checkbox" id="chatter-switch" />
+            <div class="chatter">
+              <div class="chatbox">
+                <div class="issues">
+                  <div class="col-12">
+                    <ul id="messages">
+                      <!-- starts empty, populated by socket.io and JavaScript-->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div id="liveChat">
+                <input type="text" id="type-messages" placeholder="send text" />
+                <button id="send-btn" onclick="return sendMessage()">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#0bc40b"
+                  >
+                    <path
+                      d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="userCall">
+              <div id="video-grid2">Hello</div>
+            </div>
+            <div class="officialCall">
+              <div id="video-grid">
+                <video
+                  src=""
+                  class="video-player"
+                  id="user1"
+                  autoplay
+                  playsinline
+                ></video>
+                <video
+                  src=""
+                  class="video-player"
+                  id="user2"
+                  autoplay
+                  playsinline
+                ></video>
+              </div>
+            </div>
+            <div class="call-request-container" id="call-notification">
+              <div id="call-request"></div>
+              <div class="accept-reject">
+                <button id="accept" onclick="return acceptCall()">
+                  Accept
+                </button>
+                <button id="reject" onclick="return rejectCall()">
+                  Reject
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chatter-button-container">
+          <label for="chatter-switch">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#0bc40b"
+            >
+              <path
+                d="M880-80 720-240H320q-33 0-56.5-23.5T240-320v-40h440q33 0 56.5-23.5T760-440v-280h40q33 0 56.5 23.5T880-640v560ZM160-473l47-47h393v-280H160v327ZM80-280v-520q0-33 23.5-56.5T160-880h440q33 0 56.5 23.5T680-800v280q0 33-23.5 56.5T600-440H240L80-280Zm80-240v-280 280Z"
+              />
+            </svg>
+          </label>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+    <script src="/socket.io/socket.io.min.js"></script>
+    <script src="scripts/oneonone.js"></script>
+  </body>
+</html>

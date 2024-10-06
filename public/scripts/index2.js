@@ -111,7 +111,7 @@ function closeNotification() {
   document.getElementById("request-notification").style.display = "none";
 }
 
-const socket = io("https://localhost:3300");
+const socket = io("http://localhost:3300");
 
 socket.on("messageToSocketsCitizen", (newMessage) => {
   document.getElementById(

@@ -13,6 +13,7 @@ const app = express();
 const https = require("https");
 const dotenv = require("dotenv");
 const socketio = require("socket.io");
+const { join } = require("path");
 
 dotenv.config();
 
@@ -20,9 +21,14 @@ dotenv.config();
 
 app.use(express.static("public"));
 
+
 const key = fs.readFileSync("cert.key");
 const cert = fs.readFileSync("cert.crt");
 
+
+// app.get('/:room', (req, res) => {
+//   res.render('room', {roomId: req.params.room})
+// })
 //server listen
 
 const expressServer = app.listen(process.env.PORT, () => {
